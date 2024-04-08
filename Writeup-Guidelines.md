@@ -1,14 +1,17 @@
-## Download Me on GitHub
-https[://]www.github.com/TheRealFREDP3D/
+---
+title: Writeup Guidelines
+---
 
+> Download Me on GitHub
+> (https://github.com/TheRealFREDP3D/CTF-Hackthebox-Challenges-Goodies)
 
-# Writeup Template
+# Writeup Guidelines
 
-Feel free to download and use this writeup template for Hack the Box machines for your own writeups. Please let me know where you post them so I can check them out and see how you completed the machines! If you have any contributions to this document, feel free to leave an issue and pull request!
+Feel free to download and use this writeup guidelines for your own writeups. Please let me know where you post them so I can check them out and see how you solved the challenges/boxes! If you want to add any contributions to this document, feel free to leave an issue and pull request!
 
 ---
 
-### Writeup Format
+## Guidelines
 
 1. Introduction: Provide a brief overview of the machine and its background information.
 2. Challenges: Describe each challenge encountered during the machine's completion. Include screenshots or logs where applicable.
@@ -17,18 +20,19 @@ Feel free to download and use this writeup template for Hack the Box machines fo
 
 ---
 
-### Markdown Format
+## Markdown Format
 
 Use Markdown formatting to make your writeup more readable and visually appealing. Here is an example of how you can use Markdown in your writeup:
+
 - **Bold** text
 *Italic* text
-_Underlined_ text
-__Double Underlined__ text
+*Underlined* text
+**Double Underlined** text
 
 ---
 
-### Wikilinks
+## Wikilinks
 
 Use wikilinks to provide additional information or context for specific topics discussed in the writeup. Here is an example of how you can use a wikilink:
-* [Active Directory](https://en.wikipedia.org/wiki/Active_Directory)
 
+* [Active Directory](https://en.wikipedia.org/wiki/Active_Directory)
