@@ -30,11 +30,11 @@ Tun0 IP = {VPN ATTACKER IP}
 
 **OS:** {Linux/Win}
 
-| Port #   |      Service      |
-| ------   | ----------------- |
-| #        | {NAME  + VERSION} |
-| #        | {NAME  + VERSION} |
-| #        | {NAME  + VERSION} |
+| Port #   |      Service      |  
+| ------   | ----------------- |  
+| #        | {NAME  + VERSION} |  
+| #        | {NAME  + VERSION} |  
+| #        | {NAME  + VERSION} |  
 
 ---
 
@@ -108,8 +108,8 @@ Description: {GOALS}
 
 ---
 
-> [!ROOT FLAG]
-> {ROOT FLAG}
+> [!ROOT FLAG]  
+> {ROOT FLAG}  
 
 {SCREENSHOT}
 
@@ -127,11 +127,10 @@ Description: {GOALS}
 
 ## TODO
 
-[ ] Share on Twitter
-[ ] Revise notes + Links to Notebook
-[ ] Export to HTML
-[ ] Publish on Medium
-[ ] Convert to PDF
-[ ] Push on GitHub
+[ ] Share on Twitter  
+[ ] Revise notes + Links to Notebook  
+[ ] Export to HTML  
+[ ] Publish on Medium  
+[ ] Convert to PDF  
+[ ] Push on GitHub  
 
----
