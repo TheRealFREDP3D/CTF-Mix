@@ -1,2 +1,3 @@
-# CTF-Hackthebox-Challenges-Goodies
-Some stuff I made to facilitate my work when playing CTFs or training on platforms (HackTheBox, TryHackMe, Pwn.College, WeChall, Root-Me, CryptoHack, PicoCTF, ...)
+# CTF-Mixed-Stuff
+
+Some stuff I made related to playing CTF challenges or training on various platforms (HackTheBox, TryHackMe, pwn.college, WeChal, Root-Me, CryptoHack, PicoCTF, ...)
