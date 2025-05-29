@@ -1,5 +1,5 @@
 # =========================================
-# Monoalphabetic Substitution Solver 
+#    Monoalphabetic Substitution Solver 
 # -----------------------------------------
 # Author: Frederick Pellerin
 # Github: https://github.com/therealfredp3d
@@ -30,7 +30,7 @@ cipher_text = "MAL TIRRUEZF CR MAL RKZYIOL EX MAL OIY UAE RICF MAL ACWALRM"
 
 # Analyze frequency
 freq = frequency_analysis(cipher_text)
-print("🔍 Letter Frequency Analysis:")
+print("Letter Frequency Analysis:")
 for letter, count in freq.most_common():
     print(f"{letter}: {count}")
 
@@ -46,5 +46,5 @@ substitution_key = {
 
 # Show current decryption
 decrypted = apply_substitution(cipher_text, substitution_key)
-print("\n🔓 Partial Decryption:")
+print("\nPartial Decryption:")
 print(decrypted)
