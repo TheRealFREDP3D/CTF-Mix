@@ -1,0 +1,142 @@
+[
+  {
+    "payload": "$?",
+    "response": "\u28b3\u2800\u28b8\u28b3\u28b8\u2800\u2847\u28ce\u2847\u28b8\u283d\u28a0\u2807\u2801\u28f0\u287f\u28a1\u28fe\u289e\u28f4\u28ef\u2854\u28eb\u28b4\u281f\u2800\u2800\r\n\u2800\u2800\u2819\u28a6\u28dd\u28a6\u2851\u2884\u2833\u28cc\u2833\u2848\u28a7\u2808\u2846\u2838\u28fc\u2838\u2840\u2847\u284f\u2801\u284f\u2880\u280e\u2800\u2870\u2809\u2871\u280b\u2861\u28eb\u28de\u28fd\u28cb\u28f4\u281f\u2800\u2800\u2800\r\n\u2800\u2800\u2800\u2800\u2809\u283b\u28bf\u28ee\u2873\u28cc\u28a6\u2871\u284c\u28c6\u28b8\u2800\u285f\u2846\u2847\u2847\u2847\u28b8\u2801\u285c\u2800\u287c\u2801\u285c\u2801\u28ea\u281e\u28ff\u2875\u281f\u2809\u2800\u2800\u2800\u2800\u2800\r\n\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2819\u287e\u28fe\u28f7\u28f5\u285c\u285c\u2844\u2807\u28a3\u2847\u2847\u28b3\u2801\u284e\u2800\u2800\u287c\u2881\u281e\u2820\u28be\u2875\u281f\u2809\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\r\n\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u28f7\u2808\u281b\u28bf\u28fe\u28fe\u28fe\u2818\u2808\u2801\u2807\u2800\u2800\u2801\u2800\u283e\u2801\u2880\u28e4\u281e\u28ab\u2857\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\r\n\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2818\u28a7\u28c4\u2800\u2819\u283f\u28df\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2880\u2874\u281b\u28e1\u2874\u280b\u2801\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\r\n\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2808\u2819\u2812\u2826\u282c\u2837\u2884\u2840\u2800\u2800\u2800\u28e0\u2834\u281f\u281a\u2809\u2801\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\r\n\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2809\u281b\u2812\u280b\u2801\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\u2800\r\n\r\n\u001b[33m\r\n[*] Allowed characters: ^[0-9${}/?\"[:space:]:&>_=()]+$\r\n\u001b[0m\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m/home/restricted_user/broken_shell.sh: line 41: 0: command not found\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$$",
+    "response": "/home/restricted_user/broken_shell.sh: line 41: 315: command not found\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$PATH",
+    "response": "\r\n\u001b[31m[-] Error: Command contains disallowed characters.\u001b[0m\r\n\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$PWD",
+    "response": "\r\n\u001b[31m[-] Error: Command contains disallowed characters.\u001b[0m\r\n\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$HOME",
+    "response": "\r\n\u001b[31m[-] Error: Command contains disallowed characters.\u001b[0m\r\n\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$SHELL",
+    "response": "\r\n\u001b[31m[-] Error: Command contains disallowed characters.\u001b[0m\r\n\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$USER",
+    "response": "\r\n\u001b[31m[-] Error: Command contains disallowed characters.\u001b[0m\r\n\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "/???/???",
+    "response": "\u001b[1;31mE: \u001b[0mInvalid operation /bin/awk\u001b[0m\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "/???/??",
+    "response": "/bin/cp: cannot create regular file '/sys/fs/dd': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/df': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/du': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/id': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/ln': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/ls': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/mv': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/nl': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/od': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/pr': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/ps': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/rm': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/sg': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/sh': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/su': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/tr': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/wc': Read-only file system\r\n/bin/cp: -r not specified; omitting directory '/dev/fd'\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "/?/?",
+    "response": "/home/restricted_user/broken_shell.sh: line 41: /?/?: No such file or directory\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "/??/?",
+    "response": "/home/restricted_user/broken_shell.sh: line 41: /??/?: No such file or directory\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "/???/?",
+    "response": "/bin/[: missing ']'\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??)",
+    "response": "/bin/cp: cannot create regular file '/sys/fs/dd': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/df': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/du': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/id': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/ln': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/ls': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/mv': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/nl': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/od': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/pr': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/ps': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/rm': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/sg': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/sh': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/su': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/tr': Read-only file system\r\n/bin/cp: cannot create regular file '/sys/fs/wc': Read-only file system\r\n/bin/cp: -r not specified; omitting directory '/dev/fd'\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/???)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??/?)",
+    "response": "/home/restricted_user/broken_shell.sh: line 41: /dev/fd/0: Permission denied\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": ">&2",
+    "response": "\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "2>&1",
+    "response": "\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "5>&1",
+    "response": "\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "5>&2",
+    "response": "\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$((1+1))",
+    "response": "\r\n\u001b[31m[-] Error: Command contains disallowed characters.\u001b[0m\r\n\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$((PATH))",
+    "response": "\r\n\u001b[31m[-] Error: Command contains disallowed characters.\u001b[0m\r\n\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$((PWD))",
+    "response": "\r\n\u001b[31m[-] Error: Command contains disallowed characters.\u001b[0m\r\n\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? ????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? ?????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? ??????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? ???????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? ????????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? ?????????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? ??????????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? /????/????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? /????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? /????/????/????)",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? /???/?????????) >&2",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? /???/?????????) > /???/????",
+    "response": "\r\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\r\n\r\nE: Invalid operation /bin/awk\r\n/home/restricted_user/broken_shell.sh: line 41: /???/????: ambiguous redirect\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  },
+  {
+    "payload": "$(/???/??? /???/?????????) > /dev/fd/2",
+    "response": "\r\n\u001b[31m[-] Error: Command contains disallowed characters.\u001b[0m\r\n\r\n\u001b[32mBroken@Shell\u001b[33m$ \u001b[0m"
+  }
+]

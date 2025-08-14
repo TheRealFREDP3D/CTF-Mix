@@ -1,0 +1,363 @@
+[
+    {
+        "test_number": 1,
+        "test_name": "Empty command (just newline)",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 2,
+        "test_name": "Simple number",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 3,
+        "test_name": "Simple $ (should try to expand nothing or error)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: $: command not found"
+    },
+    {
+        "test_number": 4,
+        "test_name": "Simple { (should be syntax error or wait for })",
+        "response": "/home/restricted_user/broken_shell.sh: eval: line 42: syntax error: unexpected end of file"
+    },
+    {
+        "test_number": 5,
+        "test_name": "Simple } (should be syntax error)",
+        "response": "/home/restricted_user/broken_shell.sh: eval: line 41: syntax error near unexpected token `}'\n/home/restricted_user/broken_shell.sh: eval: line 41: `}'"
+    },
+    {
+        "test_number": 6,
+        "test_name": "Simple / (likely error if not part of path)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: /: Is a directory"
+    },
+    {
+        "test_number": 7,
+        "test_name": "Simple ? (glob, might list single-char files or error)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: _: command not found"
+    },
+    {
+        "test_number": 8,
+        "test_name": "Simple \" (should be syntax error or wait for closing quote)",
+        "response": "/home/restricted_user/broken_shell.sh: eval: line 41: unexpected EOF while looking for matching `\"'\n/home/restricted_user/broken_shell.sh: eval: line 42: syntax error: unexpected end of file"
+    },
+    {
+        "test_number": 9,
+        "test_name": "Simple & (background, likely error without command)",
+        "response": "/home/restricted_user/broken_shell.sh: eval: line 41: syntax error near unexpected token `&'\n/home/restricted_user/broken_shell.sh: eval: line 41: `&'"
+    },
+    {
+        "test_number": 10,
+        "test_name": "Simple > (redirect, likely error without command/dest)",
+        "response": "/home/restricted_user/broken_shell.sh: eval: line 41: syntax error near unexpected token `newline'\n/home/restricted_user/broken_shell.sh: eval: line 41: `>'"
+    },
+    {
+        "test_number": 11,
+        "test_name": "Simple _ (treated as command if it starts line)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: _: command not found"
+    },
+    {
+        "test_number": 12,
+        "test_name": "Simple = (assignment, likely error)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: =: command not found"
+    },
+    {
+        "test_number": 13,
+        "test_name": "Simple ( (subshell/grouping, error or waits for ))",
+        "response": "/home/restricted_user/broken_shell.sh: eval: line 42: syntax error: unexpected end of file"
+    },
+    {
+        "test_number": 14,
+        "test_name": "Simple ) (error)",
+        "response": "/home/restricted_user/broken_shell.sh: eval: line 41: syntax error near unexpected token `)'\n/home/restricted_user/broken_shell.sh: eval: line 41: `)'"
+    },
+    {
+        "test_number": 15,
+        "test_name": "Quoted string",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: : command not found"
+    },
+    {
+        "test_number": 16,
+        "test_name": "Quoted string with slash",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: /: Is a directory"
+    },
+    {
+        "test_number": 17,
+        "test_name": "Exit status ($?)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 18,
+        "test_name": "Arithmetic expansion: 1+1",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 1: command not found"
+    },
+    {
+        "test_number": 19,
+        "test_name": "Arithmetic expansion: 0 (to see if it prints output)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 20,
+        "test_name": "Leak PWD",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 21,
+        "test_name": "Leak SHELL",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 22,
+        "test_name": "Leak PATH",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 23,
+        "test_name": "Leak USER",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 24,
+        "test_name": "Leak HOME",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 25,
+        "test_name": "Leak HOSTNAME",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 26,
+        "test_name": "Leak UID (bash specific)",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 27,
+        "test_name": "Leak SECONDS (bash specific)",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 28,
+        "test_name": "Leak PPID (bash specific)",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 29,
+        "test_name": "Leak RANDOM (bash specific)",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 30,
+        "test_name": "Leak _ variable (often last arg)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 31,
+        "test_name": "Dollar paren expansion without command",
+        "response": ""
+    },
+    {
+        "test_number": 32,
+        "test_name": "Dollar curly brace (empty var name)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: ${}: bad substitution"
+    },
+    {
+        "test_number": 33,
+        "test_name": "Dollar curly brace (var ?)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 34,
+        "test_name": "Dollar curly brace (var PWD - might not work if PWD has /)",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 35,
+        "test_name": "Glob: ?",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: _: command not found"
+    },
+    {
+        "test_number": 36,
+        "test_name": "Glob: ??",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: __: command not found"
+    },
+    {
+        "test_number": 37,
+        "test_name": "Glob: /?",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: /?: No such file or directory"
+    },
+    {
+        "test_number": 38,
+        "test_name": "Execute: /???/?? \"$?\" (potential /bin/ls)",
+        "response": "/bin/cp: target '0' is not a directory"
+    },
+    {
+        "test_number": 39,
+        "test_name": "Execute: /???/??? \"$?\" (potential /bin/cat)",
+        "response": "E: Invalid operation /bin/awk"
+    },
+    {
+        "test_number": 40,
+        "test_name": "Execute: /???/???/?? \"$?\" (potential /usr/bin/ls)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: /sys/bus/nd: Is a directory"
+    },
+    {
+        "test_number": 41,
+        "test_name": "Execute: /???/???/??? \"$?\" (potential /usr/bin/cat)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: /sys/bus/cpu: Is a directory"
+    },
+    {
+        "test_number": 42,
+        "test_name": "Assign /???/?? to A then exec A \"$?\"",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 43,
+        "test_name": "Assign /???/??? to A then exec A \"$?\"",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 44,
+        "test_name": "Redirect $(($?)) to file _",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 45,
+        "test_name": "Attempt to list files after creating _ (see if _ exists)",
+        "response": "/bin/cp: cannot create regular file '/sys/fs/dd': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/df': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/du': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/id': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ln': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ls': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/mv': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/nl': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/od': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/pr': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ps': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/rm': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/sg': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/sh': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/su': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/tr': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/wc': Read-only file system\n/bin/cp: -r not specified; omitting directory '/dev/fd'"
+    },
+    {
+        "test_number": 46,
+        "test_name": "Attempt to cat file _",
+        "response": "E: Invalid operation /bin/awk"
+    },
+    {
+        "test_number": 47,
+        "test_name": "Redirect stdout of potential ls to file __",
+        "response": "/bin/cp: cannot create regular file '/sys/fs/dd': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/df': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/du': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/id': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ln': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ls': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/mv': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/nl': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/od': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/pr': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ps': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/rm': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/sg': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/sh': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/su': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/tr': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/wc': Read-only file system\n/bin/cp: -r not specified; omitting directory '/dev/fd'"
+    },
+    {
+        "test_number": 48,
+        "test_name": "Cat __",
+        "response": "E: Invalid operation /bin/awk"
+    },
+    {
+        "test_number": 49,
+        "test_name": "Command subst: $(/???/??) (potential ls)",
+        "response": "/bin/cp: cannot create regular file '/sys/fs/dd': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/df': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/du': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/id': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ln': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ls': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/mv': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/nl': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/od': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/pr': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ps': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/rm': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/sg': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/sh': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/su': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/tr': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/wc': Read-only file system\n/bin/cp: -r not specified; omitting directory '/dev/fd'"
+    },
+    {
+        "test_number": 50,
+        "test_name": "Assign output of $(/???/??) to A",
+        "response": "/bin/cp: cannot create regular file '/sys/fs/dd': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/df': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/du': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/id': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ln': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ls': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/mv': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/nl': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/od': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/pr': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/ps': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/rm': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/sg': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/sh': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/su': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/tr': Read-only file system\n/bin/cp: cannot create regular file '/sys/fs/wc': Read-only file system\n/bin/cp: -r not specified; omitting directory '/dev/fd'"
+    },
+    {
+        "test_number": 51,
+        "test_name": "Echo A (via arithmetic error if A has non-numeric/operator)",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 52,
+        "test_name": "True && potential ls",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 1: command not found"
+    },
+    {
+        "test_number": 53,
+        "test_name": "False && potential ls",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 54,
+        "test_name": "True || potential ls",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 55,
+        "test_name": "False || potential ls",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 56,
+        "test_name": "Subshell with potential ls",
+        "response": "/bin/cp: target '0' is not a directory"
+    },
+    {
+        "test_number": 57,
+        "test_name": "Background potential ls",
+        "response": "/bin/cp: target '0' is not a directory"
+    },
+    {
+        "test_number": 58,
+        "test_name": "Leak LS_COLORS (often has letters)",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 59,
+        "test_name": "Leak PS1 (prompt string)",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 60,
+        "test_name": "Leak SHLVL",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 61,
+        "test_name": "Leak TERM (might be unset, or simple like 'linux')",
+        "response": "[-] Error: Command contains disallowed characters."
+    },
+    {
+        "test_number": 62,
+        "test_name": "Attempt awk with glob ?",
+        "response": "E: Invalid operation /bin/awk"
+    },
+    {
+        "test_number": 63,
+        "test_name": "Attempt awk with filename _",
+        "response": "E: Invalid operation /bin/awk"
+    },
+    {
+        "test_number": 64,
+        "test_name": "Redirect ${?} to file _",
+        "response": "/home/restricted_user/broken_shell.sh: line 41: 0: command not found"
+    },
+    {
+        "test_number": 65,
+        "test_name": "Assign /???/??? to _ and execute $_",
+        "response": ""
+    },
+    {
+        "test_number": 66,
+        "test_name": "Test null command :",
+        "response": ""
+    },
+    {
+        "test_number": 67,
+        "test_name": "Test subshell with null command (:)",
+        "response": ""
+    },
+    {
+        "test_number": 68,
+        "test_name": "Test command substitution with null command $(:)",
+        "response": ""
+    },
+    {
+        "test_number": 69,
+        "test_name": "Execute /bin/ls",
+        "payload": "/bin/ls",
+        "response": "/bin/ls",
+        "tested": true
+    },
+    {
+        "test_number": 70,
+        "test_name": "Execute cat flag.txt",
+        "payload": "cat flag.txt",
+        "response": "cat flag.txt",
+        "tested": true
+    },
+    {
+        "test_number": 71,
+        "test_name": "Execute /bin/cat flag*",
+        "payload": "/bin/cat flag*",
+        "response": "/bin/cat flag*",
+        "tested": true
+    }
+]
