@@ -43,8 +43,8 @@ def handle_client(client_socket):
                 
             # Send command
             client_socket.send(command.encode())
-    except:
-        pass
+    except Exception as e:
+        print(f"[-] Client connection error: {e}")
     finally:
         print('[*] Connection closed')
         client_socket.close()
