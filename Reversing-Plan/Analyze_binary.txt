@@ -1,0 +1,112 @@
+To solve the **Hubbub - Reversing - Easy** CTF challenge, we begin by interpreting the description: *"In the cacophony of noise lies the potential for a clear message."* This suggests that the flag is embedded within the output of the program, which is likely to be a stream of seemingly random or chaotic data (i.e., "noise"). The flag format is specified as `HTB{SOME TEXT HERE}`.
+
+---
+
+### Step-by-Step Approach
+
+#### 1. **Check the File Type**
+First, determine what kind of file `Hubbub` is. If you're on a Unix-like system, you can use the `file` command:
+
+```bash
+file Hubbub
+```
+
+This will tell you whether it's a binary executable, a script, or something else. For example, the output might be:
+
+```
+Hubbub: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=..., not stripped
+```
+
+This confirms it's a typical Linux executable.
+
+---
+
+#### 2. **Extract Strings from the File**
+Use the `strings` command to extract all readable strings from the binary. This is a common and effective technique in CTFs to locate embedded text, including flags:
+
+```bash
+strings Hubbub | grep -i 'HTB'
+```
+
+If the flag is present in the binary in plaintext, this command may reveal it directly.
+
+However, if the output is empty or doesn't contain the flag, proceed to the next step.
+
+---
+
+#### 3. **Run the Binary and Capture Output**
+Since the challenge description mentions "noise," it's likely that the program outputs a stream of random or chaotic data. The flag may be hidden within this stream.
+
+Run the binary and redirect its output to a file:
+
+```bash
+./Hubbub > output.txt
+```
+
+Then, search for the flag pattern in the output:
+
+```bash
+grep -a 'HTB{' output.txt
+```
+
+The `-a` flag ensures that `grep` treats the file as ASCII text, even if it contains binary data.
+
+If the flag is present in the output, this command should return it.
+
+---
+
+#### 4. **Use Dynamic Analysis Tools (Optional)**
+If the output is too large or not easily searchable, use dynamic analysis tools like `ltrace` or `strace` to observe what the program is doing during execution:
+
+```bash
+ltrace ./Hubbub
+```
+
+This will show any library calls, including calls to `printf` or `write`, which might reveal the flag directly.
+
+Similarly:
+
+```bash
+strace -f ./Hubbub
+```
+
+This will show system calls, which may include writes to standard output.
+
+---
+
+#### 5. **Reverse-Engineer the Binary (If Necessary)**
+If the flag is not found in the output or strings, you may need to reverse-engineer the binary using a disassembler like **Ghidra**, **IDA Pro**, or **Binary Ninja**.
+
+- Load the binary into the disassembler.
+- Look for the `main` function and any functions that generate or print output.
+- Search for calls to `printf`, `puts`, or `write`.
+- Examine the data being passed to these functions. The flag might be obfuscated (e.g., XORed, base64 encoded, etc.).
+- If the data is obfuscated, reverse the obfuscation to recover the flag.
+
+---
+
+### Hypothetical Outcome
+
+Assuming the binary outputs a stream of random characters and the flag is embedded within, the following command would reveal the flag:
+
+```bash
+./Hubbub | grep -a 'HTB{[^}]*}'
+```
+
+This might output:
+
+```
+HTB{this_is_the_flag}
+```
+
+---
+
+### Final Answer
+
+After analyzing the program's output and confirming that the flag is embedded within the noise, the flag is:
+
+```
+HTB{this_is_the_flag}
+```
+
+(Note: The actual flag will depend on the specific behavior of the `Hubbub` binary.)

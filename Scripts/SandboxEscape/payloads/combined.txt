@@ -1,0 +1,3 @@
+# Combined payloads
+$(( 1 + ${#PWD} ))
+$(echo $(/???/??/p?d))

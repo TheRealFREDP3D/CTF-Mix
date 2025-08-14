@@ -399,3 +399,7 @@ FodyWeavers.xsd
 .qodo
 /.snapshots
 /.history
+
+#Ignore cursor AI rules
+.cursor\rules\codacy.mdc
+/Scripts/pyc-reverse-tool/chall.pyc

