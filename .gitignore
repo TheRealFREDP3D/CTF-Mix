@@ -403,7 +403,10 @@ FodyWeavers.xsd
 #Ignore cursor AI rules
 .cursor\rules\codacy.mdc
 /Scripts/pyc-reverse-tool/chall.pyc
-Scripts/SandboxEscapeFuzz/chats/HTB-Broken-Shell/Initial-info-Gemini 2.5 Pro Preview 05-06.md
-.gitignore
-Scripts/SandboxEscapeFuzz/chats/HTB-Broken-Shell/steps.md
-Scripts/SandboxEscapeFuzz/chats/HTB-Broken-Shell/Initial-info-qwen3-235B-A22B.md
+/.vscode
+/Scripts/SandboxEscape/.history
+/Scripts/SandboxEscape/chats
+/Scripts/SandboxEscapeFuzz/chats
+/Scripts/SandboxEscapeFuzz/chats/HTB-Broken-Shell/Initial-info-Gemini 2.5 Pro Preview 05-06.md
+/.vscode/PythonImportHelper-v2-Completion.json
+/.vscode/settings.json
