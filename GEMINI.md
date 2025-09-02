@@ -13,7 +13,7 @@ This directory, `CTF-Mix`, serves as a collection of resources, tools, guideline
 - **`Note-Template/`**: Provides structured templates for documenting CTF progress and solutions.
   - **`DRAFT-CTFs-Notes-Template-Obsidian.md`**: A detailed Markdown template for note-taking, especially suited for Obsidian, covering sections like Information Gathering, Exploitation, Privilege Escalation, and TODOs.
 - **`Scripts/`**: Contains custom scripts, such as those for input sanitization testing.
-- **`Writeup-Guidelines/`**: Presumably contains guidelines for writing CTF challenge solutions (currently empty).
+- **`Writeup-Guidelines/`**: Contains guidelines and resources for creating CTF writeups.
 
 ## Key Files and Their Purpose
 
