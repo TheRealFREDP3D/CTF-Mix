@@ -66,7 +66,7 @@ mkdir -p ~/tools && cd ~/tools
 # Kerbrute
 if [ ! -d kerbrute ]; then
   git clone https://github.com/ropnop/kerbrute
-  cd kerbrute && go build -o kerbrute main.go && cd ..
+  cd kerbrute && go build -o kerbrute main.go && sudo mv kerbrute /usr/local/bin/ && cd ..
 fi
 
 # PEASS-ng
@@ -128,7 +128,7 @@ alias cleanup='history -c && history -w && rm -f ~/.bash_history'
 EOF
 
 echo '[+] Linking aliases into shell startup...'
-echo '[ -f ~/.ctf_aliases ] && source ~/.ctf_aliases' >> ~/.bashrc
+grep -qF 'source ~/.ctf_aliases' ~/.bashrc || echo '[ -f ~/.ctf_aliases ] && source ~/.ctf_aliases' >> ~/.bashrc
 
 echo '[+] Setup complete. Reload your shell or run:'
 echo 'source ~/.bashrc'

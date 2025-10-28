@@ -36,11 +36,14 @@ date modified: Sunday, June 29th 2025, 12:44:14 am
 smbshare() { smbclient -L "\\\\$1\\" -N; } # Usage: smbshare <target>
 smbconnect() { smbclient "\\\\$1\\$2"; } # Usage: smbconnect <target> <share>
 smbuser() { smbclient -L "\\\\$1\\" -U "$2"; } # Usage: smbuser <target> <user>
+alias smbshare='smbclient -L //TARGET -N'
+alias smbconnect='smbclient //TARGET/SHARE'
+alias smbuser='smbclient -L //TARGET -U'
 alias enum4='enum4linux-ng -a'
 enumuser() { enum4linux -u "$1" -p "$2" -a "$3"; } # Usage: enumuser <username> <password> <target>
 alias crackmap='crackmapexec smb'
 alias smbmap='smbmap -H'
-alias nbtscan='nbtscan -r 10.10.10.0/24'
+alias nbtscan='nbtscan -r TARGET_SUBNET'
 
 # 🧠 LDAP & Kerberos
 alias kerbrute='python3 ~/tools/kerbrute/kerbrute.py'
@@ -60,10 +63,18 @@ kerberoast() { GetUserSPNs.py "$1/$2:$3" -dc-ip "$4" -request; } # Usage: kerber
 alias tgt='klist'
 renewtgt() { kinit "$1@$2"; } # Usage: renewtgt <username> <domain>
 alias ptt='export KRB5CCNAME=FILE:/tmp/krb5cc_1337 && export KRB5_CONFIG=~/krb5.conf'
+alias renewtgt='kinit USERNAME@DOMAIN'
+ptt() {
+  export KRB5CCNAME="FILE:/tmp/krb5cc_$(uuidgen || date +%s)"
+  export KRB5_CONFIG="${HOME}/krb5.conf"
+  echo "[+] KRB5CCNAME set to: ${KRB5CCNAME}"
+}
 
 # 🛠️ Tools & Shortcuts
 alias cme='crackmapexec'
-alias impacket='cd ~/tools/impacket && source venv/bin/activate'
+impacket() {
+  cd ~/tools/impacket && source venv/bin/activate
+}
 alias blood='cd ~/tools/BloodHound && neo4j console'
 alias neo4jstart='sudo systemctl start neo4j'
 alias neo4jstop='sudo systemctl stop neo4j'
