@@ -66,7 +66,7 @@ mkdir -p ~/tools && cd ~/tools
 # Kerbrute
 if [ ! -d kerbrute ]; then
   git clone https://github.com/ropnop/kerbrute
-  cd kerbrute && go build -o kerbrute main.go && cd ..
+  cd kerbrute && go build -o kerbrute main.go && sudo mv kerbrute /usr/local/bin/ && cd ..
 fi
 
 # PEASS-ng
