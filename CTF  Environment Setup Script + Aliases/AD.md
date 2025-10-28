@@ -40,7 +40,7 @@ alias enum4='enum4linux-ng -a'
 alias enumuser='enum4linux -u USERNAME -p PASSWORD -a TARGET'
 alias crackmap='crackmapexec smb'
 alias smbmap='smbmap -H'
-alias nbtscan='nbtscan -r 10.10.10.0/24'
+alias nbtscan='nbtscan -r TARGET_SUBNET'
 
 # 🧠 LDAP & Kerberos
 alias kerbrute='python3 ~/tools/kerbrute/kerbrute.py'
