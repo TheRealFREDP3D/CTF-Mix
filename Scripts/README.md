@@ -4,23 +4,43 @@ This directory contains various scripts for automating tasks, testing, or other 
 
 ## Contents
 
-This directory includes the following:
+### Core Scripts (Root Directory):
+- **`alpha-auto-substitution.py`**: Automates the process of solving simple substitution ciphers using frequency analysis.
+- **`alpha-substitution-decrypt.py`**: Decrypts text using a provided substitution cipher key.
+- **`bash-send-payload.py`**: Sends a bash command payload to a target system (use responsibly and ethically).
+- **`lfi-nginx-log-poisoning.py`**: Exploits Local File Inclusion vulnerabilities by poisoning Nginx access logs.
+- **`listener.py`**: A simple network listener for receiving connections and data.
 
-### Directly in `Scripts/`:
--   **`alpha-auto-substitution.py`**: (Description needed - Add details about its function).
--   **`alpha-substitution-decrypt.py`**: (Description needed - Add details about its function).
--   **`bash-send-payload.py`**: (Description needed - Add details about its function).
--   **`lfi-nginx-log-poisoning.py`**: (Description needed - Add details about its function).
+### Subdirectories:
 
-### In Subdirectories:
--   **`Hackthebox/`**: Scripts related to HackTheBox challenges.
-    -   `Phantom-Script-exploit.py`: An exploit script, potentially for an XSS challenge.
--   **`LFI/`**: Scripts for testing Local File Inclusion vulnerabilities.
-    -   `fuzzer.py`: A fuzzer designed to test various path traversal payloads against a target file.
--   **`pyc-reverse-tool/`**: Tools for working with Python bytecode (`.pyc` files).
-    -   `py-reverse-tool.py`: A tool to disassemble and attempt to decompile Python bytecode.
--   **`Testing-Input-Sanitization/`**: Scripts and resources for testing input sanitization mechanisms.
-    -   `Input-Sanitization-Testing.py`: A Python script designed to probe a service's handling of various inputs against a known character set.
-    -   `README.md`: Detailed explanation of the input sanitization testing script.
+#### `Assembly/`
+- **`assembler.sh`**: Bash script for assembling assembly code (architecture specific).
+
+#### `Full-Auto/Hackthebox/`
+- **`Phantom-exploit.py`**: Automated exploit script for a HackTheBox challenge (Phantom box).
+
+#### `LFI/`
+- **`lfi_fuzzer.py`**: Advanced fuzzer for testing Local File Inclusion vulnerabilities with various path traversal payloads.
+
+#### `pyc-reverse-tool/`
+- **`py-reverse-tool.py`**: Tool for reverse engineering Python bytecode (.pyc files) - can disassemble and attempt to decompile.
+
+#### `Testing-Input-Sanitization/`
+- **`Input-Sanitization-Testing.py`**: Tests web application input handling by sending various payloads to detect sanitization issues.
+- **`README.md`**: Documentation for the input sanitization testing framework.
+
+#### `XSS-Cookie-Stealer/`
+- **`cookie-stealer.py`**: Proof-of-concept for demonstrating XSS cookie stealing vulnerabilities.
+
+#### `quantum/`
+- **`quantum_teleport.py`**: Quantum computing example demonstrating quantum teleportation (educational purposes).
+
+## Usage
+
+Each script includes a help message that can be accessed by running it with the `-h` or `--help` flag. For detailed usage instructions, refer to the individual script's documentation or comments.
+
+## Note
+
+These scripts are intended for educational and authorized testing purposes only. Always ensure you have proper authorization before testing any systems.
 
 Refer to the `README.md` within each subdirectory for more detailed information about the specific scripts and their functionalities.
