@@ -46,7 +46,7 @@ alias smbmap='smbmap -H'
 alias nbtscan='nbtscan -r TARGET_SUBNET'
 
 # 🧠 LDAP & Kerberos
-alias kerbrute='python3 ~/tools/kerbrute/kerbrute.py'
+alias kerbrute='~/tools/kerbrute/kerbrute'
 alias ldapenum='ldapsearch -x -H ldap://TARGET -s base'
 alias adenum='python3 ~/tools/ADEnum/ADEnum.py'
 bloodhound() { bloodhound-python -u "$1" -p "$2" -dc-ip "$3" -c all; } # Usage: bloodhound <user> <password> <dc_ip>
