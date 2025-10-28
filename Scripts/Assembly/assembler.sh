@@ -15,4 +15,5 @@ if [[ "$2" == "-g" ]]; then
   gdb -q "${fileName}"
 else
   "./${fileName}"
+  "./${fileName}"
 fi
