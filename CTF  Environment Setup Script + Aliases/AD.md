@@ -63,7 +63,9 @@ alias ptt='export KRB5CCNAME=FILE:/tmp/krb5cc_1337 && export KRB5_CONFIG=~/krb5.
 
 # 🛠️ Tools & Shortcuts
 alias cme='crackmapexec'
-alias impacket='cd ~/tools/impacket && source venv/bin/activate'
+impacket() {
+  cd ~/tools/impacket && source venv/bin/activate
+}
 alias blood='cd ~/tools/BloodHound && neo4j console'
 alias neo4jstart='sudo systemctl start neo4j'
 alias neo4jstop='sudo systemctl stop neo4j'
