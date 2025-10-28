@@ -59,7 +59,11 @@ alias asreproast='GetNPUsers.py DOMAIN/ -usersfile users.txt -no-pass -dc-ip TAR
 alias kerberoast='GetUserSPNs.py DOMAIN/USER:PASSWORD -dc-ip TARGET -request'
 alias tgt='klist'
 alias renewtgt='kinit USERNAME@DOMAIN'
-alias ptt='export KRB5CCNAME=FILE:/tmp/krb5cc_1337 && export KRB5_CONFIG=~/krb5.conf'
+ptt() {
+  export KRB5CCNAME="FILE:/tmp/krb5cc_$(uuidgen || date +%s)"
+  export KRB5_CONFIG="${HOME}/krb5.conf"
+  echo "[+] KRB5CCNAME set to: ${KRB5CCNAME}"
+}
 
 # 🛠️ Tools & Shortcuts
 alias cme='crackmapexec'
