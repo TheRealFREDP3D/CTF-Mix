@@ -99,7 +99,7 @@ alias linpeas='./linpeas.sh | tee linpeas.log'
 
 ```bash
 alias checkperm='find / -type f \( -perm -4000 -o -perm -2000 \) 2>/dev/null'
-alias pshell='python3 -c "import pty;pty.spawn(\'/bin/bash\')"'
+alias pshell='python3 -c "import pty; pty.spawn(\'/bin/bash\')"'
 alias suidlist='find / -type f -perm -04000 -ls 2>/dev/null'
 alias gtfo='xdg-open https://gtfobins.github.io'
 alias sudoers='sudo -l'
