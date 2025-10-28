@@ -33,9 +33,9 @@ date modified: Sunday, June 29th 2025, 12:44:14 am
 
 ```bash
 # 🔎 SMB & NetBIOS
-alias smbshare='smbclient -L \\\\TARGET\\ -N'
-alias smbconnect='smbclient \\\\TARGET\\SHARE'
-alias smbuser='smbclient -L \\\\TARGET\\ -U'
+alias smbshare='smbclient -L //TARGET -N'
+alias smbconnect='smbclient //TARGET/SHARE'
+alias smbuser='smbclient -L //TARGET -U'
 alias enum4='enum4linux-ng -a'
 alias enumuser='enum4linux -u USERNAME -p PASSWORD -a TARGET'
 alias crackmap='crackmapexec smb'
