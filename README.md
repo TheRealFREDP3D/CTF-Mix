@@ -41,11 +41,9 @@ A comprehensive collection of tools, scripts, and resources for Capture The Flag
 ### Quick Start
 
 1. **Setup Environment**:
-   ```bash
-   # Run the setup script (check for any system requirements first)
-   cd "CTF Environment Setup Script + Aliases"
-   ./setup.sh
-   ```
+   - Copy the script from `CTF Environment Setup Script + Aliases/Setup Script.md` to a file named `setup.sh`.
+   - Make it executable: `chmod +x setup.sh`
+   - Run it as root: `sudo ./setup.sh`
 
 2. **Explore Scripts**:
    ```bash
