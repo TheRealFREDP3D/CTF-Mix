@@ -2,7 +2,19 @@
 
 A comprehensive collection of tools, scripts, and resources for Capture The Flag (CTF) challenges and cybersecurity training. This repository contains materials developed while solving challenges on various platforms including HackTheBox, TryHackMe, pwn.college, WeChall, Root-Me, CryptoHack, PicoCTF, and more.
 
-## 📁 Repository Structure
+## � Table of Contents
+
+- [CTF-Mixed-Stuff](#ctf-mixed-stuff)
+  - [� Table of Contents](#-table-of-contents)
+  - [�📁 Repository Structure](#-repository-structure)
+    - [Core Directories](#core-directories)
+    - [Quick Start](#quick-start)
+  - [🛠️ Usage](#️-usage)
+  - [⚠️ Legal \& Ethical Considerations](#️-legal--ethical-considerations)
+  - [🤝 Contributing](#-contributing)
+  - [📄 License](#-license)
+
+## �📁 Repository Structure
 
 ### Core Directories
 
@@ -11,7 +23,7 @@ A comprehensive collection of tools, scripts, and resources for Capture The Flag
   - `privesc.md` - Privilege escalation techniques and commands
   - `web-cheatsheet.md` - Web application testing quick reference
 
-- **`CTF Environment Setup Script + Aliases/`** - Setup scripts and shell configurations
+- **`ctf-setup-aliases/`** - Setup scripts and shell configurations
   - Environment setup for different CTF platforms
   - Custom shell aliases for common tasks
   - Tool installation scripts
@@ -41,7 +53,7 @@ A comprehensive collection of tools, scripts, and resources for Capture The Flag
 ### Quick Start
 
 1. **Setup Environment**:
-   - Copy the script from `CTF Environment Setup Script + Aliases/Setup Script.md` to a file named `setup.sh`.
+   - Copy the script from `ctf-setup-aliases/Setup Script.md` to a file named `setup.sh`.
    - Make it executable: `chmod +x setup.sh`
    - Run it as root: `sudo ./setup.sh`
 
