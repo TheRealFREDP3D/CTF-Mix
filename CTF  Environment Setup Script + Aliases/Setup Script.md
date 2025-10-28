@@ -1,27 +1,6 @@
----
-tags:
-  - "#type/template"
-  - "#github"
-  - "#network-security"
-  - "#ctf"
-  - "#kali-linux"
-  - "#parrotsec"
-  - "#linux-hardware"
-  - "#programming"
-  - "#python-scripting"
-description:
-author:
-created: Sunday, June 29th 2025, 12:42:46 am
-source:
-title: 🛠️ `ctf-setup.sh` – CTF Environment Setup Script
-date modified: Sunday, June 29th 2025, 12:42:59 am
----
+# 🛠️ `ctf-setup.sh` – CTF Environment Setup Script
 
 Here's a full **CTF Environment Setup Script** that automates setting up a **Kali Linux or ParrotSec VM** for fast and efficient CTF play. It installs essential tools, sets up useful aliases (including Active Directory tools), and configures your terminal environment for speed.
-
----
-
-# 🛠️ `ctf-setup.sh` – CTF Environment Setup Script
 
 > ✅ Compatible with Kali Linux / Parrot OS  
 > 📦 Installs tools  
@@ -86,9 +65,9 @@ echo "[+] Adding CTF aliases..."
 cat << 'EOF' > ~/.ctf_aliases
 # === General Recon ===
 alias ports='netstat -tuln | grep LISTEN'
-alias ipinfo='ip a && ip r'
-alias myip='ip addr'
-alias whatweb='whatweb -v'
+  git clone https://github.com/ropnop/kerbrute
+  cd kerbrute && go build -o kerbrute main.go && sudo mv kerbrute /usr/local/bin/ && cd ..
+fi
 alias nmapf='nmap -sC -sV -T4 -oN nmap_full -v'
 alias nmapq='nmap -sS -T4 -p- -oN nmap_quick --min-rate=1000 -v'
 alias gobusterd='gobuster dir -u http://TARGET -w /usr/share/wordlists/dirb/common.txt'
@@ -168,11 +147,11 @@ After setup, **take a VM snapshot** (e.g., in VirtualBox or VMware) called `CTF-
 ## 🧠 Learning Resources
 
 - [HackTricks Book](https://book.hacktricks.xyz/)
-    
+
 - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
-    
+
 - [TryHackMe AD Rooms](https://tryhackme.com/module/active-directory)
-    
+
 - [HTB Starting Point](https://app.hackthebox.com/starting-point)
 
 ---
