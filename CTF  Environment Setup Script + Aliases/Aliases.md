@@ -114,7 +114,13 @@ alias chkpasswd='cat /etc/passwd | grep sh$'
 ```bash
 alias myports='ss -tulwn'
 alias sniff='sudo tcpdump -i any -nn'
-alias scanlive='for ip in $(seq 1 254); do ping -c1 192.168.1.$ip | grep "64 bytes"; done'
+scanlive() {
+  local subnet=${1:-192.168.1}
+  for ip in $(seq 1 254); do
+    ping -c1 "${subnet}.${ip}" | grep "64 bytes" &
+  done
+  wait
+}
 alias dnslookup='dig +short'
 alias whoisall='whois $(whoami)@$(hostname)'
 ```
