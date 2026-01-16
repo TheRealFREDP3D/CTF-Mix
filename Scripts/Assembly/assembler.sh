@@ -1,19 +1,29 @@
 #!/bin/bash
-set -e  # stop on first error
+set -e
 
 if [[ -z "$1" ]]; then
-  echo "Usage: $0 file.s [-g]"
+  echo "Usage: $0 file.s [-g]" >&2
   exit 1
 fi
 
-fileName="${1%%.*}"
+if [[ ! -f "$1" ]]; then
+  echo "Error: File '$1' not found" >&2
+  exit 1
+fi
 
-nasm -f elf64 "${fileName}.s" -o "${fileName}.o"
-ld "${fileName}.o" -o "${fileName}"
+base_name="${1%.s}"
+
+# Assemble with GNU as (supports .intel_syntax)
+as --64 "$1" -o "${base_name}.o"
+
+# Link
+ld "${base_name}.o" -o "${base_name}"
+
+# Clean up
+rm -f "${base_name}.o"
 
 if [[ "$2" == "-g" ]]; then
-  gdb -q "${fileName}"
+  gdb -q "${base_name}"
 else
-  "./${fileName}"
-  "./${fileName}"
+  "./${base_name}"
 fi
