@@ -1,7 +1,7 @@
 from requests import get
 
-IP = '94.237.59.174'
-PORT = '58212'
+IP = '<TARGET_IP>'
+PORT = '<TARGET_PORT>'
 
 # Test payload for PHP execution
 payload = 'phpinfo()'

