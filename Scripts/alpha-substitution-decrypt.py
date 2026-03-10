@@ -1,5 +1,5 @@
 # =========================================
-#    Monoalphabetic Substitution Solver 
+#    Monoalphabetic Substitution Solver
 # -----------------------------------------
 # Author: Frederick Pellerin
 # Github: https://github.com/therealfredp3d
@@ -7,6 +7,9 @@
 # =========================================
 
 from collections import Counter
+
+# Cipher text input
+cipher_text = "MAL TIRRUEZF CR MAL RKZYIOL EX MAL OIY UAE RICF MAL ACWALRM"
 
 def frequency_analysis(text):
     text = text.replace(" ", "").upper()
@@ -22,11 +25,6 @@ def apply_substitution(ciphertext, key):
         else:
             result += '_'
     return result
-
-# -------------------------------------------------------------------------
-# Cipher text input
-cipher_text = "MAL TIRRUEZF CR MAL RKZYIOL EX MAL OIY UAE RICF MAL ACWALRM"
-# --------------------------------------------------------------------------
 
 # Analyze frequency
 freq = frequency_analysis(cipher_text)
