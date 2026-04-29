@@ -14,54 +14,52 @@ A comprehensive collection of tools, scripts, and resources for Capture The Flag
   - [🤝 Contributing](#-contributing)
   - [📄 License](#-license)
 
-## �📁 Repository Structure
+## 📁 Repository Structure
 
 ### Core Directories
 
 - **`Cheatsheets/`** - Quick reference guides and command references
   - `reverse-shell-cheatsheet.md` - Various reverse shell payloads and techniques
-  - `privesc.md` - Privilege escalation techniques and commands
-  - `web-cheatsheet.md` - Web application testing quick reference
 
-- **`ctf-setup-aliases/`** - Setup scripts and shell configurations
-  - Environment setup for different CTF platforms
-  - Custom shell aliases for common tasks
-  - Tool installation scripts
+- **`CTF Environment Setup Script + Aliases/`** - Environment setup and configuration
+  - Setup scripts for CTF environments
+  - Custom shell aliases and configurations
 
 - **`Guidelines/`** - Best practices and methodologies
   - CTF participation guidelines
   - Ethical hacking principles
-  - Reporting templates
 
 - **`Note-Template/`** - Structured note-taking templates
   - Challenge documentation format
-  - Solution tracking
-  - Methodology documentation
+  - Solution tracking templates
 
 - **`Scripts/`** - Custom tools and exploit scripts
-  - Cryptography tools
-  - Web exploitation scripts
-  - Binary exploitation helpers
-  - Network tools
+  - **Cryptography & Ciphers**: `alpha-substitution-decrypt.py`, `alpha-auto-substitution.py`
+  - **Binary Exploitation**: `shell.s`, `shellcode_optimized.py`, `500-add-solver-pwntools.py`
+  - **Web Security**: `lfi-nginx-log-poisoning.py`, `bash-send-payload.py`, `XSS-Cookie-Stealer/`
+  - **Network Tools**: `listener.py`, `pass-spraying-domain-users.py`
+  - **Assembly**: `Assembly/assembler.sh` with GAS syntax support
+  - **Python Tools**: `pyc-reverse-tool/` for .pyc reverse engineering
+  - **CTF Platform Tools**: `pwn.college/` backup solutions
+  - **Testing**: `Testing-Input-Sanitization/` for web app testing
   - *See [Scripts/README.md](Scripts/README.md) for complete details*
 
 - **`Writeup-Guidelines/`** - Templates and standards
-  - Writeup structure
-  - Documentation standards
-  - Reporting best practices
+  - Writeup structure and documentation standards
 
 ### Quick Start
 
 1. **Setup Environment**:
-   - Copy the script from `ctf-setup-aliases/Setup Script.md` to a file named `setup.sh`.
-   - Make it executable: `chmod +x setup.sh`
-   - Run it as root: `sudo ./setup.sh`
+   - Navigate to `CTF Environment Setup Script + Aliases/` for setup scripts
+   - Follow the installation instructions for your platform
 
 2. **Explore Scripts**:
    ```bash
    # Check available scripts
    cd Scripts
    python3 script_name.py --help
+   # For assembly:
+   ./Assembly/assembler.sh program.s
    ```
 
 3. **Use Cheatsheets**:
@@ -69,6 +67,12 @@ A comprehensive collection of tools, scripts, and resources for Capture The Flag
    # Quick reference during challenges
    cat Cheatsheets/reverse-shell-cheatsheet.md | less
    ```
+
+4. **Common Use Cases**:
+   - **Binary Exploitation**: Use `500-add-solver-pwntools.py` for CTF math challenges
+   - **Cryptography**: Try `alpha-substitution-decrypt.py` for substitution ciphers
+   - **Web Testing**: Use `Testing-Input-Sanitization/` for web app security testing
+   - **Reverse Engineering**: Use `pyc-reverse-tool/` for Python bytecode analysis
 
 ## 🛠️ Usage
 

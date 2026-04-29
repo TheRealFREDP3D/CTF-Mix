@@ -40,11 +40,14 @@ rotate_backups() {
 }
 
 create_backup() {
-  local ts archive
+  local ts archive estimated_size
   ts=$(timestamp)
   archive="$BACKUP_DIR/home-backup-$ts.tar.gz"
 
-  log "📦 Creating compressed backup: $archive"
+  # Estimate backup size first
+  estimated_size=$(du -sh --exclude="$HOME/.cache" --exclude="$HOME/.local/share/Trash" --exclude="$HOME/.config/Code/Cache" "$HOME" 2>/dev/null | awk '{print $1}' || echo "unknown")
+  log "📦 Creating compressed backup: $archive (estimated size: $estimated_size)"
+  
   tar "${EXCLUDES[@]}" -czf "$archive" -C "$HOME" . 2>>"$LOG_FILE"
   log "✅ Backup complete: $(du -h "$archive" | awk '{print $1}')"
 }
@@ -69,7 +72,11 @@ log "🏁 Starting home backup for $USER"
 
 rotate_backups
 create_backup
-latest=$(ls -t "$BACKUP_DIR"/home-backup-*.tar.gz | head -n 1)
+latest=$(ls -t "$BACKUP_DIR"/home-backup-*.tar.gz 2>/dev/null | head -n 1 || echo "")
+if [[ -z "$latest" ]]; then
+  log "❌ No backup file found!"
+  exit 1
+fi
 verify_backup "$latest"
 upload_remote "$latest"
 

@@ -17,6 +17,7 @@ def load_code_from_pyc(path):
         magic = f.read(4)
         
         if sys.version_info >= (3, 7):
+            flags_or_timestamp = f.read(4)
             hash_based = int.from_bytes(flags_or_timestamp, "little") & 0x01
             if hash_based:
                 f.read(8)  # skip hash
@@ -29,7 +30,7 @@ def load_code_from_pyc(path):
         marshal_data = f.read()
         
         try:
-            code_obj = marshal.loads(rest)
+            code_obj = marshal.loads(marshal_data)
             return code_obj
         except Exception as e:
             print(f"[!] Failed to load marshal code object from .pyc: {e}")

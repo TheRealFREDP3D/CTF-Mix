@@ -1,3 +1,5 @@
+# Assembly Script
+
 This is a **bash script** that automates the process of assembling and linking x86-64 assembly programs, with an optional debugging mode.
 
 ## Line-by-Line Breakdown
@@ -13,17 +15,17 @@ This is a **bash script** that automates the process of assembling and linking x
 - Checks if the first argument (`$1`) is empty (`-z` = zero length)
 - If no filename was provided, shows usage instructions and exits
 
-**`fileName="${1%%.*}"`**
-- Extracts the filename without extension
-- `%%.*` removes everything from the last `.` to the end
+**`base_name="${1%.s}"`**
+- Extracts the filename without the `.s` extension
+- `%.s` removes only the `.s` extension
 - Example: `program.s` becomes `program`
 
-**`nasm -f elf64 "${fileName}.s" -o "${fileName}.o"`**
-- **nasm**: The Netwide Assembler
-- **-f elf64**: Specifies output format as 64-bit ELF (Linux executable format)
-- Assembles the `.s` source file into a `.o` object file
+**`as --64 "$1" -o "${base_name}.o"`**
+- **as**: The GNU Assembler (GAS)
+- **--64**: Specifies 64-bit mode for x86-64 assembly
+- Assembles the `.s` source file into a `.o` object file using GAS syntax
 
-**`ld "${fileName}.o" -o "${fileName}"`**
+**`ld "${base_name}.o" -o "${base_name}"`**
 - **ld**: The GNU linker
 - Links the object file into an executable binary
 - Output has no extension (standard for Linux executables)
@@ -31,11 +33,11 @@ This is a **bash script** that automates the process of assembling and linking x
 **`if [[ "$2" == "-g" ]]; then`**
 - Checks if the second argument is `-g` (debug flag)
 
-**Debug mode:** `gdb -q "${fileName}"`
+**Debug mode:** `gdb -q "${base_name}"`
 - Launches GDB (GNU Debugger) in quiet mode
 - Lets you step through the assembly code
 
-**Normal mode:** `"./${fileName}"`
+**Normal mode:** `"./${base_name}"`
 - Executes the compiled program directly
 
 ## Usage Examples

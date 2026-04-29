@@ -87,7 +87,7 @@ Move the backup to safety using `rsync` or `scp`.
 
 ```bash
 # Change filename
-rsync -az hacker@dojo.pwn.college:/home/hacker/<enter filename of the backup> "./pwn-college-home-backup.tar.gz
+rsync -az hacker@dojo.pwn.college:/home/hacker/<enter filename of the backup> "./pwn-college-home-backup.tar.gz"
 ```
 
 ### With `scp`:
@@ -96,7 +96,7 @@ rsync -az hacker@dojo.pwn.college:/home/hacker/<enter filename of the backup> ".
 
 
 # Change filename
-$ scp hacker@dojo.pwn.college:/home/hacker/<enter filename of the backup> ./pwn-college-home-backup.tar
+$ scp hacker@dojo.pwn.college:/home/hacker/<enter filename of the backup> ./pwn-college-home-backup.tar.gz
 
 home-backup-2025-10-24-1941.tar.gz                                                    100%   29MB 900.7KB/s   00:32
 ```
@@ -127,7 +127,7 @@ This extracts the backup into a temporary folder to confirm it’s complete.
 |Check home size|`du -sh ~`|
 |Create compressed backup|`tar -czf ...`|
 |List archives|`ls -lh ~/home-backup-*.tar.gz`|
-|Browse archive contents|`tar -tzf archive.tar.gz|
+|Browse archive contents|`tar -tzf archive.tar.gz`|
 |Restore from backup|`tar -xzf archive.tar.gz -C ~/restore-test`|
 |Copy backup remotely|`rsync` or `scp`|
 
