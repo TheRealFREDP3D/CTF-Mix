@@ -29,10 +29,6 @@ A comprehensive collection of tools, scripts, and resources for Capture The Flag
   - CTF participation guidelines
   - Ethical hacking principles
 
-- **`Note-Template/`** - Structured note-taking templates
-  - Challenge documentation format
-  - Solution tracking templates
-
 - **`Scripts/`** - Custom tools and exploit scripts
   - **Cryptography & Ciphers**: `alpha-substitution-decrypt.py`, `alpha-auto-substitution.py`
   - **Binary Exploitation**: `shell.s`, `shellcode_optimized.py`, `500-add-solver-pwntools.py`
